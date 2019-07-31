@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <% include ../partials/head %>
+   </head>
+  <body>
+        <% include ../partials/header %>
+    <div class="container">
+       <fieldset>       
+        
+        <form action="/" method="post">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="secondName">Last Name:</label>
+            <input type="text" class="form-control" id="secondName" name="secondName" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="number" class="form-control" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="customerEmail" placeholder="name@example.com" name="customerEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Date of Birth:</label>
+            <input type="date" class="form-control" id="dateOfBirth"  name="dateOfBirth" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Address 1:</label>
+            <input type="address" class="form-control" id="address" placeholder="name@example.com" name="address" required>
+          </div>
+          <div class="form-group">
+              <label for="mobilePhoneBrand">Mobile Phone Brand</label>
+              <select class="form-control" id="mobilePhoneBrand" required name="mobilePhoneBrand">
+                <option>Select</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="other">Other</option>
+                
+              </select>
+            </div>
+          <div class="form-group">
+            <label for="insurancePlan">Insurance Plan</label>
+            <select class="form-control" id="insurancePlan" name="insurancePlan">
+              <option>Select</option>
+              <option value="Full">Full</option>
+              <option value="Spares">Spares</option>
+              <option value="Damage/Broken phone">Damage/Broken phone</option>
+              <option value="Used phone">Used phone</option>
+              <option value="Extended Warranty">Extended Warranty</option>
+              <option value="Multi Device Protection Pack">Multi Device Protection Pack</option>
+              <option value="Mobile Protection Pack">Mobile Protection Pack</option>
+
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="mobilePhoneModel">Mobile Phone Model:</label>
+              <input type="text" class="form-control" id="mobilePhoneModel" name="mobilePhoneModel" placeholder="Mobile Phone Model" required>
+            </div>
+            <div class="form-group">
+                <label for="IMEI">IMEI Number:</label>
+                <input type="number" class="form-control" id="IMEI" name="IMEI"  placeholder="IMEI Number" required>
+              </div>
+          
+          
+          <button type="submit" class="btn btn-primary">Buy Insurance</button>
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>
