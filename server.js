@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser');
 var http = require('http');
 var request = require('request');
+var url = require('url');
 const fs = require('fs')
 app.set('view engine', 'ejs')   
 app.use(express.static('public'));
@@ -22,8 +23,27 @@ app.get('/getinsurance', function (req, res) {
  res.render('getinsurance');
 })
 app.get('/getinsurancedata', function (req, res) {
-  console.log(req);
-  res.render('getinsurance');
+  //console.log(req.query);
+  var url_parts = url.parse(req.url, true);
+var query = url_parts.query;
+var emailurl='https://ebhdfqufzd.execute-api.us-east-1.amazonaws.com/dev/todos?email="'+query.email+"'";
+request.get(emailurl,function(err,response,body){
+  if(err) //TODO: handle err
+  {
+
+  }
+  if(response.statusCode == 200 ) //etc
+  //TODO Do something with response
+  {
+    res.send(response.body);
+  }
+  else{
+    res.send(response.body);
+  }
+  
+});
+
+ // res.send('getinsurance');
  })
 app.post('/', function (req, res) {
     //console.log(req.body);
@@ -44,5 +64,5 @@ app.post('/', function (req, res) {
   })
 
 app.listen(2000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Example app listening on port 2000!')
 })

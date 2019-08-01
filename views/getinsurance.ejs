@@ -3,24 +3,50 @@
   <head>
     <meta charset="utf-8">
     <% include ../partials/head %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    </head>
   <body>
         
     <% include ../partials/header %>
     <div class="container">
     <h1>Retrieve insurance</h1>
-    <div class="form-group">
+    <!--
+<form action="/getinsurancedata" method="GET">    
+    -->
+       <div class="form-group">
       <label for="firstName">Email Address:</label>
       <input type="text" class="form-control" id="emailAddress" name="emailAddress" required>
     </div>
-    <button type="submit" class="btn btn-primary" onclick="getInsurance()">Get Insurance</button>
-    </div>
+    <button type="button" class="btn btn-primary" onclick="getInsurance()">Get Insurance</button>
+    <p class="result"></p>
+  <!--
+</form>
+  -->
+  
+  </div>
     <script type="text/javascript">
     function getInsurance(){
-      var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", '/getinsurancedata', false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
+     try {
+       
+        var email=document.getElementById('emailAddress').value
+        var siteurl = "/getinsurancedata?email='"+email+"'";
+        $.ajax({
+                   url: siteurl,
+                   method: "GET",
+                   headers: { "Accept": "application/json;" },
+                   success: function (data) {
+                        console.log(data)     
+                  },
+                  error: function (data) {
+                      alert("Error: "+ data);
+                 }
+          
+    });
+     } catch (error) {
+       Console.error(error)
+     }
+      
+  
     }
     </script>
     </body>
