@@ -9,6 +9,19 @@
     <% include ../partials/header %>
     <div class="container">
     <h1>Retrieve insurance</h1>
+    <div class="form-group">
+      <label for="firstName">Email Address:</label>
+      <input type="text" class="form-control" id="emailAddress" name="emailAddress" required>
     </div>
+    <button type="submit" class="btn btn-primary" onclick="getInsurance()">Get Insurance</button>
+    </div>
+    <script type="text/javascript">
+    function getInsurance(){
+      var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", '/getinsurancedata', false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+    }
+    </script>
     </body>
   </html>

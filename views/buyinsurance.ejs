@@ -20,11 +20,11 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone:</label>
-            <input type="number" class="form-control" id="phone" name="phone" required>
+            <input type="number" class="form-control" id="phone" name="Phone" required>
           </div>
           <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="customerEmail" placeholder="name@example.com" name="customerEmail" required>
+            <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" name="emailAddress" required>
           </div>
           
           <div class="form-group">
@@ -34,11 +34,32 @@
           
           <div class="form-group">
             <label for="email">Address 1:</label>
-            <input type="address" class="form-control" id="address" placeholder="name@example.com" name="address" required>
+            <input type="text" class="form-control" id="address1" placeholder="name@example.com" name="address1" required>
           </div>
           <div class="form-group">
-              <label for="mobilePhoneBrand">Mobile Phone Brand</label>
-              <select class="form-control" id="mobilePhoneBrand" required name="mobilePhoneBrand">
+            <label for="email">Address 2:</label>
+            <input type="text" class="form-control" id="address2" placeholder="name@example.com" name="address2" required>
+          </div>
+          <div class="form-group">
+            <label for="email">City:</label>
+            <input type="text" class="form-control" id="City" placeholder="name@example.com" name="City" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Zipcode:</label>
+            <input type="number" class="form-control" id="Zipcode" placeholder="name@example.com" name="Zipcode" required>
+          </div>
+          <div class="form-group">
+            <label for="email">State:</label>
+            <input type="text" class="form-control" id="State" placeholder="name@example.com" name="State" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Country:</label>
+            <input type="text" class="form-control" id="Country" placeholder="name@example.com" name="Country" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="phoneType">Mobile Phone Brand</label>
+              <select class="form-control" id="phoneType" required name="phoneType">
                 <option>Select</option>
                 <option value="Apple">Apple</option>
                 <option value="Samsung">Samsung</option>
@@ -47,8 +68,8 @@
               </select>
             </div>
           <div class="form-group">
-            <label for="insurancePlan">Insurance Plan</label>
-            <select class="form-control" id="insurancePlan" name="insurancePlan">
+            <label for="insuranceType">Insurance Plan</label>
+            <select class="form-control" id="insuranceType" name="insuranceType">
               <option>Select</option>
               <option value="Full">Full</option>
               <option value="Spares">Spares</option>
@@ -58,6 +79,16 @@
               <option value="Multi Device Protection Pack">Multi Device Protection Pack</option>
               <option value="Mobile Protection Pack">Mobile Protection Pack</option>
 
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="insuranceType">cellPhoneCarrier</label>
+            <select class="form-control" id="cellPhoneCarrier" name="cellPhoneCarrier">
+              <option>Select</option>
+              <option value="Full">AT&T</option>
+              <option value="Spares">Sprint</option>
+              <option value="Spares">Others</option>              
             </select>
           </div>
           <div class="form-group">

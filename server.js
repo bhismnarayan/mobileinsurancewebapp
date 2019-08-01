@@ -21,11 +21,14 @@ app.get('/getinsurance', function (req, res) {
  // res.send('Hello World!')
  res.render('getinsurance');
 })
-
+app.get('/getinsurancedata', function (req, res) {
+  console.log(req);
+  res.render('getinsurance');
+ })
 app.post('/', function (req, res) {
     //console.log(req.body);
     postdata={'insurancedata':req.body}
-    url="https://yogql2suug.execute-api.us-east-1.amazonaws.com/dev/todos";
+    url="https://ebhdfqufzd.execute-api.us-east-1.amazonaws.com/dev/todos";
     var clientServerOptions = {
       uri:url ,
       body: JSON.stringify(postdata),
@@ -35,8 +38,8 @@ app.post('/', function (req, res) {
       }
   }
   request(clientServerOptions, function (error, response) {
-      console.log(error,response.body);
-      return;
+      console.log(error,response);
+      res.render('Thankyou');
   });
   })
 
