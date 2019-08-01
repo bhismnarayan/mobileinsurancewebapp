@@ -35,7 +35,18 @@
                    method: "GET",
                    headers: { "Accept": "application/json;" },
                    success: function (data) {
-                        console.log(data)     
+                        console.log(data)  
+                        var obj = JSON.parse(data)
+                        x=obj.find(item => {
+                           return item.emailAddress == email
+                        });
+                        console.log(x);
+                        var htmlelement="<ul>"
+                        $.each(x ,function(index,value){
+                          htmlelement+="<li>"+index+" -"+value+"</li>"
+                        });
+                        htmlelement+="<ul>"
+                        $('.result').html(htmlelement)  
                   },
                   error: function (data) {
                       alert("Error: "+ data);
