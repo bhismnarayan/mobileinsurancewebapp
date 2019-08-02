@@ -19,6 +19,10 @@ app.get('/buyinsurance', function (req, res) {
  // res.send('Hello World!')
  res.render('buyinsurance');
 })
+app.get('/trackclaim', function (req, res) {
+  // res.send('Hello World!')
+  res.render('trackclaim');
+ })
 app.get('/getinsurance', function (req, res) {
  // res.send('Hello World!')
  res.render('getinsurance');
